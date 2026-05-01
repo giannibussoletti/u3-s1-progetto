@@ -6,7 +6,13 @@ const SliderButton = function (props) {
 
   return (
     <span
-      style={{ width: "5%" }}
+      onClick={(e) => {
+        const targetCarousel = e.target.closest(".smooth-carousel")
+        props.arrowDirection === "right"
+          ? targetCarousel.scrollBy(targetCarousel.offsetWidth, 0)
+          : targetCarousel.scrollBy(-targetCarousel.offsetWidth, 0)
+      }}
+      style={{ width: "10%" }}
       className={
         "arrow-" + props.arrowDirection + " " + props.arrowPosition + "-0 " + buttonSliderClass
       }>
@@ -17,7 +23,7 @@ const SliderButton = function (props) {
           color: "rgb(255, 255, 255)",
           width: "50px",
           height: "25px",
-          "line-height": "1.5em",
+          lineHeight: "1.5em",
         }}
       />
     </span>

@@ -8,16 +8,14 @@ const SliderMedia = function (props) {
   return (
     <Container fluid className="px-5 my-5">
       <Row className="position-relative my-5 pb-3">
-        <SliderTitle sliderTitle="Trending Now" />
+        <SliderTitle sliderTitle={props.title} />
         <Row
           xs={1}
           md={2}
           lg={3}
           xxl={5}
-          id="trending-carousel"
           className="p-0 smooth-carousel m-0 flex-nowrap overflow-scroll hiding-bar">
           {props.array_path.map((linkPoster) => {
-            console.log(linkPoster.poster_path)
             return <SingleSlide key={linkPoster.id} slideLink={linkPoster.poster_path} />
           })}
 

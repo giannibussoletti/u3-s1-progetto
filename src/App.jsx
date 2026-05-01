@@ -5,13 +5,14 @@ import MyNavBar from "./components/MyNavBar"
 import SliderMedia from "./components/SliderMedia"
 import FullHeigthCar from "./components/FullHeigthCar"
 import { Col, Container, Row } from "react-bootstrap"
+import { Component } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 // FONTAWESOME IMPORT
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
-import { Component } from "react"
 library.add(fas, far, fab)
 /* #endregion */
 
@@ -24,13 +25,16 @@ class App extends Component {
       image2: [],
       image3: [],
       image4: [],
+      footerIcon: ["facebook", "instagram", "twitter", "youtube"],
     },
   }
 
+  /* #region  */
   popularMovie = "https://api.themoviedb.org/3/movie/popular?language=it-IT&page=1"
   popularTV = "https://api.themoviedb.org/3/tv/popular?language=it-IT&page=1"
   searchMethod = "https://api.themoviedb.org/3/search/movie?query=Avengers"
 
+  /* #endregion */
   options = {
     headers: {
       Authorization:
@@ -121,8 +125,17 @@ class App extends Component {
         </main>
         <footer>
           <Container>
-            <Row>
-              <Col></Col>
+            <Row className="text-center text-md-start" xs={1} sm={2} md={4}>
+              <Col className="w-100 my-5">
+                {this.state.information.footerIcon.map((icon) => (
+                  <FontAwesomeIcon
+                    className="me-3"
+                    icon={"fa-brands fa-square-" + icon + " fa-2xl"}
+                    style={{ color: "#808080" }}
+                  />
+                ))}
+              </Col>
+              <Col>Pezzi di footer</Col>
             </Row>
           </Container>
         </footer>

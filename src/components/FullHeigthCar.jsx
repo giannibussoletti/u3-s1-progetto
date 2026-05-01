@@ -1,6 +1,6 @@
 import { Component } from "react"
 import { Carousel } from "react-bootstrap"
-import MyCarouselItem from "./MyCarouselItem"
+import MyCarouselItem from "./fh-slider/MyCarouselItem"
 
 class FullHeigthCar extends Component {
   buttonClass = "fw-bold px-5 py-2 text-capitalize shadow-sm me-2 mb-2 rounded-2 border-00"

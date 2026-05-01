@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
-import MyButtonSlider from "./MyButtonSlider"
+import MyButtonSlider from "./MyButtonCarousel"
 
 const MyCarouselItem = function (props) {
   const buttonClass = "fw-bold px-5 py-2 text-capitalize shadow-sm me-2 mb-2 rounded-2 border-00"

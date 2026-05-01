@@ -15,8 +15,8 @@ const SliderButton = function (props) {
         className="mt-5"
         style={{
           color: "rgb(255, 255, 255)",
-          width: "100px",
-          height: "50px",
+          width: "50px",
+          height: "25px",
           "line-height": "1.5em",
         }}
       />

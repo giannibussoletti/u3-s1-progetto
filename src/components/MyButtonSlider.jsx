@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Col, Button } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 
 const MyButtonSlider = function (props) {
   return (

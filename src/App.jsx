@@ -9,6 +9,7 @@ library.add(fas, far, fab)
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import MyNavBar from "./components/MyNavBar"
+// import Prova from "./components/Prova"
 import FullHeigthCar from "./components/FullHeigthCar"
 
 const App = function () {
@@ -17,6 +18,7 @@ const App = function () {
       <header className="position-relative vh-100">
         <MyNavBar />
         <FullHeigthCar />
+        {/* <Prova /> */}
       </header>
       <main></main>
       <footer></footer>

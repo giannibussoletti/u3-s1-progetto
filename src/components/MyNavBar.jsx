@@ -14,7 +14,7 @@ const MyNavBar = function () {
         {/* Menu Hamburger solo da mobile */}
         <Dropdown as={NavItem} className="flex-grow-0  d-flex d-lg-none">
           <Dropdown.Toggle as={NavLink}>
-            <FontAwesomeIcon icon="fa-solid fa-bars" style={{ color: "#e2e5e9;" }} />
+            <FontAwesomeIcon icon="fa-solid fa-bars" style={{ color: "#e2e5e9" }} />
           </Dropdown.Toggle>
           <Dropdown.Menu style={{ top: "150%" }}>
             {menuObj.menu.map((link) => {

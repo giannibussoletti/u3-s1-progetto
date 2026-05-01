@@ -9,12 +9,14 @@ library.add(fas, far, fab)
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import MyNavBar from "./components/MyNavBar"
+import FullHeigthCar from "./components/FullHeigthCar"
 
 const App = function () {
   return (
     <>
-      <header>
+      <header className="position-relative vh-100">
         <MyNavBar />
+        <FullHeigthCar />
       </header>
       <main></main>
       <footer></footer>

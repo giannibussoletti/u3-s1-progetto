@@ -9,7 +9,7 @@ const MyNavBar = function () {
   }
 
   return (
-    <Navbar expand="lg" className="p-0">
+    <Navbar expand="lg" className="p-0 z-3">
       <Container fluid className="bg-black bg-opacity-50 text-white position-relative">
         {/* Menu Hamburger solo da mobile */}
         <Dropdown as={NavItem} className="flex-grow-0  d-flex d-lg-none">

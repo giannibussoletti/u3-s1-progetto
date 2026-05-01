@@ -14,7 +14,7 @@ class FullHeigthCar extends Component {
         indicators={false}>
         {this.logoName.map((logo, i) => {
           return (
-            <Carousel.Item key={logo} className={"vw-100 vh-100 slide-" + (i + 1)}>
+            <Carousel.Item key={logo} className={"vw-100 vh-100 slide-" + (i + 1)} interval={4000}>
               <MyCarouselItem logoName={logo} />
             </Carousel.Item>
           )

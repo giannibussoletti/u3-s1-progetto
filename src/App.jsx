@@ -1,4 +1,5 @@
 // MAIN IMPORT
+/* #region  */
 import "bootstrap/dist/css/bootstrap.min.css"
 import MyNavBar from "./components/MyNavBar"
 import SliderMedia from "./components/SliderMedia"
@@ -11,10 +12,11 @@ import { far } from "@fortawesome/free-regular-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { Component } from "react"
 library.add(fas, far, fab)
+/* #endregion */
 
 // Fetch
-const popular = "https://api.themoviedb.org/3/tv/popular?language=it-IT&page=1"
-const configuration = "https://api.themoviedb.org/3/configuration"
+const popular = "https://api.themoviedb.org/3/tv/popular?language=it-IT&page=2"
+// const configuration = "https://api.themoviedb.org/3/configuration"
 const options = {
   headers: {
     Authorization:
@@ -29,24 +31,6 @@ class App extends Component {
     },
   }
 
-  // fetchingConfiguration = () => {
-  //   fetch(configuration, options)
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response.json()
-  //       } else {
-  //         throw new Error(response.status)
-  //       }
-  //     })
-  //     .then((data) => {
-  //       console.log(data)
-  //       // this.setState({
-  //       //   image: popular + data.results[1].backdrop_path,
-  //       // })
-  //     })
-  //     .catch((err) => console.log(err))
-  // }
-
   fetching = () => {
     fetch(popular, options)
       .then((response) => {
@@ -57,10 +41,9 @@ class App extends Component {
         }
       })
       .then((data) => {
-        console.log(data.results)
         this.setState({
           information: {
-            image: "http://image.tmdb.org/t/p/" + "w342/" + data.results[1].poster_path,
+            image: data.results,
           },
         })
       })
@@ -79,8 +62,7 @@ class App extends Component {
           <FullHeigthCar />
         </header>
         <main>
-          <img src={this.state.information.image} alt="eerwe" />
-          <SliderMedia />
+          <SliderMedia array_path={this.state.information.image} />
         </main>
         <footer></footer>
       </div>

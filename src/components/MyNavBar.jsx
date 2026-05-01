@@ -1,5 +1,7 @@
 import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import NavBarElement from "./NavBarElement"
+
 const MyNavBar = function () {
   const menuObj = {
     menu: ["Home", "Tv Show", "Movies", "Recently Added", "My List"],
@@ -9,6 +11,7 @@ const MyNavBar = function () {
   return (
     <Navbar expand="lg" className="p-0">
       <Container fluid className="bg-black bg-opacity-50 text-white position-relative">
+        {/* Menu Hamburger solo da mobile */}
         <Dropdown as={NavItem} className="flex-grow-0  d-flex d-lg-none">
           <Dropdown.Toggle as={NavLink}>
             <FontAwesomeIcon icon="fa-solid fa-bars" style={{ color: "#e2e5e9;" }} />
@@ -16,26 +19,35 @@ const MyNavBar = function () {
           <Dropdown.Menu style={{ top: "150%" }}>
             {menuObj.menu.map((link) => {
               return (
-                <Dropdown.Item key={link} href="#" className={menuObj.class}>
-                  {link}
-                </Dropdown.Item>
+                <NavBarElement
+                  key={link}
+                  buttonName={link}
+                  classObj={menuObj.class}
+                  typeOf={Dropdown.Item}
+                />
               )
             })}
           </Dropdown.Menu>
         </Dropdown>
-
+        {/* Logo Netflix */}
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
           <img className="h-100" src="../public/netflix_logo.png" alt="" />
         </Navbar.Brand>
+
+        {/* Menu Tablet / Desktop */}
         <Nav className="d-none d-lg-flex me-auto">
           {menuObj.menu.map((link) => {
             return (
-              <Nav.Link key={link} href="#" className={menuObj.class}>
-                {link}
-              </Nav.Link>
+              <NavBarElement
+                key={link}
+                buttonName={link}
+                classObj={menuObj.class}
+                typeOf={Nav.Link}
+              />
             )
           })}
         </Nav>
+        {/* Menu Destra */}
         <Nav className=" flex-row align-items-center">
           <Nav.Link className=" p-2">
             <FontAwesomeIcon

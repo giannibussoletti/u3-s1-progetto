@@ -8,7 +8,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons"
 library.add(fas, far, fab)
 
 import "bootstrap/dist/css/bootstrap.min.css"
-import MyNavBar from "./MyNavBar"
+import MyNavBar from "./components/MyNavBar"
 
 const App = function () {
   return (

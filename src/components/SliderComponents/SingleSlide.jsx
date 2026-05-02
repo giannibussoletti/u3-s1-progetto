@@ -7,6 +7,7 @@ const SingleSlide = function (props) {
         className="w-100"
         src={"http://image.tmdb.org/t/p/" + "w342/" + props.slideLink}
         alt=""
+        id={props.uniqueId}
       />
     </Col>
   )

@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import NavBarElement from "./NavBarElement"
+import NavBarElement from "./Home/NavBarElement"
 
 const MyNavBar = function () {
   const menuObj = {
@@ -9,14 +9,16 @@ const MyNavBar = function () {
   }
 
   return (
-    <Navbar expand="lg" className="p-0 z-3">
+    <Navbar expand="lg" className="p-0 z-3" data-bs-theme="dark">
       <Container fluid className="bg-black bg-opacity-50 text-white position-relative">
         {/* Menu Hamburger solo da mobile */}
         <Dropdown as={NavItem} className="flex-grow-0  d-flex d-lg-none">
           <Dropdown.Toggle as={NavLink}>
             <FontAwesomeIcon icon="fa-solid fa-bars" style={{ color: "#e2e5e9" }} />
           </Dropdown.Toggle>
-          <Dropdown.Menu style={{ top: "150%" }}>
+          <Dropdown.Menu
+            style={{ top: "100%" }}
+            className="bg-black rounded-0 border-light border-1">
             {menuObj.menu.map((link) => {
               return (
                 <NavBarElement

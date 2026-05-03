@@ -1,14 +1,13 @@
 import { Container, Row, Col, Image, Button, Dropdown, Form } from "react-bootstrap"
 import MenuLang from "./components/LoginPageComponents/MenuLang"
 import BottomButton from "./components/LoginPageComponents/BottomButton"
-import LoginNavBar from "./components/LoginPageComponents/LoginNavBar"
 
 const langArray = ["Italian", "English", "German", "Spanish"]
 const bottomButton = ["SAVE", "CANCEL", "DELETE PROFILE"]
 
 const LoginPage = function () {
   return (
-    <>
+    <div className="bg-black">
       <Container className="text-light">
         <Row>
           <Col className="border-bottom border-secondary">
@@ -89,7 +88,7 @@ const LoginPage = function () {
           </Row>
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 export default LoginPage

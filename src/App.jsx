@@ -1,3 +1,5 @@
+"use client"
+
 // MAIN IMPORT
 /* #region  */
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -5,6 +7,7 @@ import MyNavBar from "./components/MyNavBar"
 import SliderMedia from "./components/SliderMedia"
 import FullHeigthCar from "./components/FullHeigthCar"
 import FooterColComponent from "./components/FooterColComponent"
+
 import { Col, Container, Row, Button } from "react-bootstrap"
 import { Component } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -22,9 +25,14 @@ library.add(fas, far, fab)
 class App extends Component {
   state = {
     information: {
+      responseWrong: false,
+      responseType: 0,
       image1: [],
       image2: [],
       image3: [],
+      spinner1: true,
+      spinner2: true,
+      spinner3: true,
       footerIcon: ["facebook", "instagram", "twitter", "youtube"],
       firstColFooter: ["Audio and Subtitles", "Media Center", "Privacy", "Contact Us"],
       secondColFooter: ["Audio Dcscription", "Investor Relations", "Legal Notices"],
@@ -34,9 +42,9 @@ class App extends Component {
   }
 
   /* #region  */
-  popularMovie = "https://api.themoviedb.org/3/movie/popular?language=it-IT&page=1"
-  popularTV = "https://api.themoviedb.org/3/tv/popular?language=it-IT&page=1"
-  searchMethod = "https://api.themoviedb.org/3/tv/top_rated?language=it-IT&page=1"
+  popularMovie = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+  popularTV = "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1"
+  searchMethod = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1"
 
   /* #endregion */
   options = {
@@ -52,6 +60,13 @@ class App extends Component {
         if (response.ok) {
           return response.json()
         } else {
+          console.log(response)
+          this.setState({
+            information: {
+              responseWrong: true,
+              responseType: response.status,
+            },
+          })
           throw new Error(response.status)
         }
       })
@@ -60,10 +75,11 @@ class App extends Component {
           information: {
             ...this.state.information,
             image1: data.results,
+            spinner1: false,
           },
         })
       })
-      .catch((err) => console.log(err))
+      .catch((err) => err)
   }
 
   fetchingSearch = () => {
@@ -80,6 +96,7 @@ class App extends Component {
           information: {
             ...this.state.information,
             image2: data.results,
+            spinner2: false,
           },
         })
       })
@@ -100,6 +117,7 @@ class App extends Component {
           information: {
             ...this.state.information,
             image3: data.results,
+            spinner3: false,
           },
         })
       })
@@ -120,12 +138,22 @@ class App extends Component {
           <FullHeigthCar />
         </header>
         <main>
-          <SliderMedia title="Top Rated" array_path={this.state.information.image2.slice(0, 15)} />
           <SliderMedia
+            responseOK={this.state.information.spinner1}
             title="Popular Movie"
             array_path={this.state.information.image1.slice(0, 15)}
           />
-          <SliderMedia title="TV Show" array_path={this.state.information.image3.slice(0, 15)} />
+
+          <SliderMedia
+            responseOK={this.state.information.spinner2}
+            title="Top Rated"
+            array_path={this.state.information.image2.slice(0, 15)}
+          />
+          <SliderMedia
+            responseOK={this.state.information.spinner3}
+            title="TV Show"
+            array_path={this.state.information.image3.slice(0, 15)}
+          />
         </main>
         <footer>
           <Container>

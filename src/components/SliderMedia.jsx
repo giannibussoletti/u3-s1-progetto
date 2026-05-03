@@ -1,11 +1,10 @@
-import { Container, Row } from "react-bootstrap"
+import { Container, Row, Spinner } from "react-bootstrap"
 import SliderTitle from "./SliderComponents/SliderTitle"
 import SingleSlide from "./SliderComponents/SingleSlide"
 import SliderButton from "./SliderComponents/SliderButton"
 SliderButton
 
 const SliderMedia = function (props) {
-  console.log(props)
   return (
     <Container fluid className="px-5 my-5">
       <Row className="position-relative my-5 pb-3">
@@ -16,6 +15,12 @@ const SliderMedia = function (props) {
           lg={3}
           xxl={5}
           className="p-0 smooth-carousel m-0 flex-nowrap overflow-scroll hiding-bar">
+          {props.responseOK && (
+            <div className="w-100 d-flex justify-content-center align-align-items-center">
+              <Spinner animation="grow" variant="white" />
+            </div>
+          )}
+
           {props.array_path.map((linkPoster) => {
             return (
               <SingleSlide

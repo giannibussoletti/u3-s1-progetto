@@ -1,15 +1,18 @@
-import { Navbar, Image, Col } from "react-bootstrap"
+import { Navbar, Image, Col, Container, Row } from "react-bootstrap"
 
 const LoginNavBar = function () {
   return (
-    <Col>
-      <Navbar>
-        <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
-          {/* <img className="h-100" /> */}
-          <Image className="h-100" src="../public/netflix_logo.png" alt="Netflix Logo" />
-        </Navbar.Brand>
-      </Navbar>
-    </Col>
+    <Container>
+      <Row>
+        <Col>
+          <Navbar>
+            <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
+              <Image className="h-100" src="../public/netflix_logo.png" alt="Netflix Logo" />
+            </Navbar.Brand>
+          </Navbar>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 export default LoginNavBar

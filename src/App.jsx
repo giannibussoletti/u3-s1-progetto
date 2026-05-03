@@ -2,9 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Component } from "react"
 import Home from "./Home"
-import MyNavBar from "./components/MyNavBar"
+import MyNavBar from "./components/Home/MyNavBar"
 import Footer from "./Footer"
 import LoginPage from "./LoginPage"
+import LoginNavBar from "./components/LoginPageComponents/LoginNavBar"
+import Settings from "./components/Settings"
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 // Fetch
@@ -114,12 +116,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="bg-black">
-        {/* <header className="position-relative">
+      <div className="bg-black d-flex flex-column vh-100">
+        <header className="position-relative">
           <MyNavBar />
-        </header> */}
+          {/* <LoginNavBar /> */}
+        </header>
 
-        {/* <Home
+        <main>
+          {/*<Home
           spinner1={this.state.information.spinner1}
           spinner2={this.state.information.spinner2}
           spinner3={this.state.information.spinner3}
@@ -128,9 +132,14 @@ class App extends Component {
           posterArray3={this.state.information.image3}
         /> */}
 
-        <LoginPage />
+          {/* <LoginPage /> */}
 
-        <Footer />
+          <Settings />
+        </main>
+
+        <footer className="bg-black">
+          <Footer />
+        </footer>
       </div>
     )
   }

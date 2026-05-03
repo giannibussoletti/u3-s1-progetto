@@ -9,13 +9,6 @@ const bottomButton = ["SAVE", "CANCEL", "DELETE PROFILE"]
 const LoginPage = function () {
   return (
     <>
-      <header>
-        <Container>
-          <Row>
-            <LoginNavBar />
-          </Row>
-        </Container>
-      </header>
       <Container className="text-light">
         <Row>
           <Col className="border-bottom border-secondary">
@@ -91,7 +84,7 @@ const LoginPage = function () {
         <Row className="mt-3 pt-4 border-top border-secondary">
           <Row className="d-flex flex-wrap justify-content-center gap-3">
             {bottomButton.map((button) => {
-              return <BottomButton button={button} />
+              return <BottomButton key={"button-" + button} button={button} />
             })}
           </Row>
         </Row>

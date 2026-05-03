@@ -4,7 +4,9 @@ import { Component } from "react"
 import Home from "./Home"
 import MyNavBar from "./components/MyNavBar"
 import Footer from "./Footer"
+import LoginPage from "./LoginPage"
 
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 // Fetch
 
 class App extends Component {
@@ -113,18 +115,21 @@ class App extends Component {
   render() {
     return (
       <div className="bg-black">
-        <header className="position-relative vh-100">
+        {/* <header className="position-relative">
           <MyNavBar />
-        </header>
+        </header> */}
 
-        <Home
+        {/* <Home
           spinner1={this.state.information.spinner1}
           spinner2={this.state.information.spinner2}
           spinner3={this.state.information.spinner3}
           posterArray1={this.state.information.image1}
           posterArray2={this.state.information.image2}
           posterArray3={this.state.information.image3}
-        />
+        /> */}
+
+        <LoginPage />
+
         <Footer />
       </div>
     )

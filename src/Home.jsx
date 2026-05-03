@@ -7,7 +7,9 @@ class Home extends Component {
     return (
       <div className="bg-black">
         <main>
-          <FullHeigthCar />
+          <div className="vh-100">
+            <FullHeigthCar />
+          </div>
           <SliderMedia
             responseOK={this.props.spinner1}
             title="Popular Movie"

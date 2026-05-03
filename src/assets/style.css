@@ -1,3 +1,4 @@
+/* MainPage CSS */
 .dropdown-toggle::after {
   display: none !important;
 }
@@ -58,4 +59,26 @@ h4,
 .h4 {
   z-index: 100;
   position: relative;
+}
+
+/* Login Page CSS */
+#checkbox-css .form-check {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+#checkbox-css .form-check input {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+}
+
+.form-check input:checked {
+  background-color: #000;
+  border-color: #ffffff;
+}
+
+.dropdown-item:active {
+  background-color: grey !important;
 }

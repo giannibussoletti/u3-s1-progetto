@@ -31,7 +31,7 @@ const MyNavBar = function () {
         </Dropdown>
         {/* Logo Netflix */}
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
-          <img className="h-100" src="../public/netflix_logo.png" alt="" />
+          <img className="h-100" src="../public/netflix_logo.png" alt="Netflix Logo" />
         </Navbar.Brand>
 
         {/* Menu Tablet / Desktop */}

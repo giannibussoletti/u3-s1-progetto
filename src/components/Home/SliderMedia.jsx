@@ -26,7 +26,13 @@ const SliderMedia = function (props) {
               <SingleSlide
                 key={linkPoster.id}
                 uniqueId={linkPoster.id}
-                slideLink={linkPoster.poster_path}
+                posterLink={linkPoster.poster_path}
+                originalTitle={linkPoster.title}
+                seriesName={linkPoster.name}
+                plotSummary={linkPoster.overview}
+                backdrop={linkPoster.backdrop_path}
+                // SeriesAirDate={linkPoster.first_air_date}
+                // MovieRelease={linkPoster.release_date}
               />
             )
           })}

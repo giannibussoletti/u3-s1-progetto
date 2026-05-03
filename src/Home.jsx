@@ -4,6 +4,7 @@ import { Component } from "react"
 
 class Home extends Component {
   render() {
+    console.log
     return (
       <div className="bg-black">
         <div className="vh-100">

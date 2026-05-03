@@ -2,13 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Component } from "react"
 import Home from "./Home"
-import LoginPage from "./LoginPage"
 import Footer from "./Footer"
 import MyNavBar from "./components/MyNavBar"
+import LoginPage from "./LoginPage"
 import LoginNavBar from "./components/LoginPageComponents/LoginNavBar"
 import Settings from "./Settings"
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 // Fetch
 
 class App extends Component {
@@ -116,28 +115,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className="bg-black d-flex flex-column vh-100">
-        <Router>
-          <header className="position-relative">
-            <MyNavBar />
-            {/* <LoginNavBar /> */}
-          </header>
+      <div className="d-flex flex-column vh-100">
+        <header className="position-relative">
+          <MyNavBar />
+          {/* <LoginNavBar /> */}
+        </header>
 
-          <main>
-            <Home
-              spinner1={this.state.information.spinner1}
-              spinner2={this.state.information.spinner2}
-              spinner3={this.state.information.spinner3}
-              posterArray1={this.state.information.image1}
-              posterArray2={this.state.information.image2}
-              posterArray3={this.state.information.image3}
-            />
-
-            <LoginPage />
-
-            <Settings />
-          </main>
-        </Router>
+        <main className="bg-black">
+          <Home
+            spinner1={this.state.information.spinner1}
+            spinner2={this.state.information.spinner2}
+            spinner3={this.state.information.spinner3}
+            posterArray1={this.state.information.image1}
+            posterArray2={this.state.information.image2}
+            posterArray3={this.state.information.image3}
+          />
+          {/* <LoginPage /> */}
+          {/* <Settings /> */}
+        </main>
         <footer className="bg-black">
           <Footer />
         </footer>

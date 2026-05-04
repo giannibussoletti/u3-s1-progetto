@@ -110,22 +110,27 @@ class App extends Component {
     return (
       <div className="d-flex flex-column vh-100">
         <header className="position-relative">
-          {/* <MyNavBar /> */}
-          <LoginNavBar />
+          <MyNavBar />
         </header>
-
         <main className="bg-black">
-          <LoginPage />
-          {/* <Home
+          <Home
             spinner1={this.state.information.spinner1}
             spinner2={this.state.information.spinner2}
             spinner3={this.state.information.spinner3}
             posterArray1={this.state.information.image1}
             posterArray2={this.state.information.image2}
             posterArray3={this.state.information.image3}
-          /> */}
+          />
           {/* <Settings /> */}
         </main>
+
+        {/* <header>  
+          <LoginNavBar />
+        </header>
+        <main className="bg-black">
+          <LoginPage />
+        </main> */}
+
         <footer className="bg-black">
           <Footer />
         </footer>

@@ -8,7 +8,7 @@ import LanguageSettings from "./components/Settings/LanguageSetting"
 AccountMember
 const Settings = function () {
   return (
-    <Container fluid className="bg-body mb-5">
+    <Container fluid className="bg-body pb-5">
       <Container>
         <Row>
           <Col>

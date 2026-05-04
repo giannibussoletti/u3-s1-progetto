@@ -3,7 +3,6 @@ import { Button, Col, Row } from "react-bootstrap"
 import SectionTitle from "./SectionTitle"
 import ListGenerator from "./ListGenerator"
 
-const studentFirstSection = ["student&#64;strive.school", "Password:*******", "Phone: 321 044 1279"]
 const studentSecondSection = ["Change account email", "Change password", "Change phone number"]
 
 const paymentFirstSection = ["Update payment info", "Billing details"]
@@ -22,7 +21,7 @@ const AccountMember = function () {
         <SectionTitle sectionTitle="Membership &amp; billing" />
         <Button
           variant="dark"
-          className="px-4 shadow-sm rounded-0 border-bottom border-secondary border-opacity-50 border-1">
+          className="px-4 shadow-sm rounded-0 border-bottom border-secondary opacity-50 border-opacity-50 border-1">
           Cancel Membership
         </Button>
       </Col>
@@ -30,9 +29,9 @@ const AccountMember = function () {
         {/* STUDENT */}
         <Row className="mb-3 border-secondary text-center text-sm-start border-bottom">
           <Col className="p-0" sm={6}>
-            {studentFirstSection.map((listItem, i) => {
-              return <ListGenerator key={listItem + i} ListItem={listItem} />
-            })}
+            <p class="mb-2 fw-bold">student&#64;strive.school</p>
+            <p class="mb-2 text-secondary">Password:*******</p>
+            <p class="mb-2 text-secondary">Phone: 321 044 1279</p>
           </Col>
           <Col sm={6} className="text-center text-sm-end">
             {studentSecondSection.map((listItem, i) => {

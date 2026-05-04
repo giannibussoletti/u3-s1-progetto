@@ -13,8 +13,6 @@ import Settings from "./Settings"
 class App extends Component {
   state = {
     information: {
-      responseWrong: false,
-      responseType: 0,
       image1: [],
       image2: [],
       image3: [],
@@ -44,12 +42,7 @@ class App extends Component {
           return response.json()
         } else {
           console.log(response)
-          this.setState({
-            information: {
-              responseWrong: true,
-              responseType: response.status,
-            },
-          })
+
           throw new Error(response.status)
         }
       })

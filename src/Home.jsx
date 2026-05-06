@@ -4,9 +4,8 @@ import FullHeigthCar from "./components/Home/FullHeigthCar"
 const Home = function (props) {
   return (
     <div className="bg-black">
-      <div className="vh-100">
-        <FullHeigthCar />
-      </div>
+      <FullHeigthCar />
+
       <SliderMedia
         responseOK={props.spinner1}
         title="Popular Movie"

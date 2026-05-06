@@ -7,19 +7,24 @@ class FullHeigthCar extends Component {
   logoName = ["django", "knives-out", "frankenstein"]
   render() {
     return (
-      <Carousel
-        slide={true}
-        className="vw-100 vh-100 position-absolute top-0"
-        controls={false}
-        indicators={false}>
-        {this.logoName.map((logo, i) => {
-          return (
-            <Carousel.Item key={logo} className={"vw-100 vh-100 slide-" + (i + 1)} interval={4000}>
-              <MyCarouselItem logoName={logo} />
-            </Carousel.Item>
-          )
-        })}
-      </Carousel>
+      <div className="vh-100">
+        <Carousel
+          slide={true}
+          className="vw-100 vh-100 position-absolute top-0"
+          controls={false}
+          indicators={false}>
+          {this.logoName.map((logo, i) => {
+            return (
+              <Carousel.Item
+                key={logo}
+                className={"vw-100 vh-100 slide-" + (i + 1)}
+                interval={4000}>
+                <MyCarouselItem logoName={logo} />
+              </Carousel.Item>
+            )
+          })}
+        </Carousel>
+      </div>
     )
   }
 }

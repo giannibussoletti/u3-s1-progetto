@@ -8,8 +8,10 @@ const Details = function (props) {
   )
   return (
     <>
-      <Container className="position-relative text-white main-container-details">
-        <Row>
+      <Container
+        fluid
+        className=" mb-5 position-relative text-white main-container-details overflow-hidden h-100">
+        <Row cl>
           <Col>
             <h1 style={{ fontSize: "3em" }} className="text-center fw-bold my-4">
               {singleMedia.title === undefined ? singleMedia.name : singleMedia.title}
@@ -20,7 +22,7 @@ const Details = function (props) {
           <Col sm={12} md={6} className="text-center">
             <Image
               fluid
-              className="shadow-lg mb-4"
+              className="shadow-lg mb-5"
               src={"http://image.tmdb.org/t/p/" + "w342" + singleMedia.poster_path}
             />
           </Col>
@@ -32,13 +34,11 @@ const Details = function (props) {
             </p>
           </Col>
         </Row>
-      </Container>
-      <Container fluid className="media-details-bg">
-        <Row>
-          <Col>
-            <Image src={"http://image.tmdb.org/t/p/" + "original/" + singleMedia.backdrop_path} />
-          </Col>
-        </Row>
+        <Image
+          align="center"
+          className="media-details-bg px-0 w-100"
+          src={"http://image.tmdb.org/t/p/" + "original/" + singleMedia.backdrop_path}
+        />
       </Container>
     </>
   )

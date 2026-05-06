@@ -1,8 +1,10 @@
+import FullHeigthCar from "./Home/FullHeigthCar"
 import SliderMedia from "./Home/SliderMedia"
 
 const TvShow = function (props) {
   return (
     <>
+      <FullHeigthCar />
       <SliderMedia
         responseOK={props.spinner3}
         title="TV Show"

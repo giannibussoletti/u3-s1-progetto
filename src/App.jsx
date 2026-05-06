@@ -5,8 +5,11 @@ import Home from "./Home"
 import Footer from "./Footer"
 import MyNavBar from "./components/MyNavBar"
 import LoginPage from "./LoginPage"
-import LoginNavBar from "./components/LoginPageComponents/LoginNavBar"
 import Settings from "./Settings"
+
+import { BrowserRouter, Route, Routes } from "react-router"
+import TvShow from "./components/TvShow"
+import Details from "./Details"
 
 // Fetch
 
@@ -108,33 +111,56 @@ class App extends Component {
 
   render() {
     return (
-      <div className="d-flex flex-column vh-100">
-        <header className="position-relative">
-          <MyNavBar />
-        </header>
-        <main className="bg-black">
-          <Home
-            spinner1={this.state.information.spinner1}
-            spinner2={this.state.information.spinner2}
-            spinner3={this.state.information.spinner3}
-            posterArray1={this.state.information.image1}
-            posterArray2={this.state.information.image2}
-            posterArray3={this.state.information.image3}
-          />
-          {/* <Settings /> */}
-        </main>
+      <BrowserRouter>
+        <div className="d-flex flex-column vh-100">
+          <header className="position-relative">
+            <MyNavBar />
+          </header>
+          <main className="bg-black">
+            <Routes>
+              <Route
+                path={"/"}
+                element={
+                  <Home
+                    spinner1={this.state.information.spinner1}
+                    spinner2={this.state.information.spinner2}
+                    spinner3={this.state.information.spinner3}
+                    posterArray1={this.state.information.image1}
+                    posterArray2={this.state.information.image2}
+                    posterArray3={this.state.information.image3}
+                  />
+                }
+              />
+              <Route
+                path="/tv-show"
+                element={
+                  <TvShow
+                    spinner3={this.state.information.spinner3}
+                    posterArray3={this.state.information.image3}
+                  />
+                }
+              />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/login-page" element={<LoginPage />} />
+              <Route
+                path="/details/:uniqueId"
+                element={
+                  <Details
+                    infoArray={this.state.information.image1.concat(
+                      this.state.information.image2,
+                      this.state.information.image3,
+                    )}
+                  />
+                }
+              />
+            </Routes>
+          </main>
 
-        {/* <header>  
-          <LoginNavBar />
-        </header>
-        <main className="bg-black">
-          <LoginPage />
-        </main> */}
-
-        <footer className="bg-black">
-          <Footer />
-        </footer>
-      </div>
+          <footer className="bg-black">
+            <Footer />
+          </footer>
+        </div>
+      </BrowserRouter>
     )
   }
 }

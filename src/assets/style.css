@@ -1,12 +1,13 @@
 /* MainPage CSS */
-.dropdown-toggle::after {
+
+/* .dropdown-toggle::after {
   display: none !important;
-}
+} */
 
 .slide-1,
 .slide-2,
 .modal-details,
-.slide-3 {
+.slide-3 .details-bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

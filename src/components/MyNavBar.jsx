@@ -1,11 +1,13 @@
 import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBarElement from "./Home/NavBarElement"
+import { Link } from "react-router"
 
 const MyNavBar = function () {
   const menuObj = {
     menu: ["Home", "Tv Show", "Movies", "Recently Added", "My List"],
     class: "text-white text-decoration-none opacity-75",
+    menuSettings: ["Settings", "Logout"],
   }
 
   return (
@@ -24,8 +26,9 @@ const MyNavBar = function () {
                 <NavBarElement
                   key={link}
                   buttonName={link}
-                  classObj={menuObj.class}
-                  typeOf={Dropdown.Item}
+                  classObj={menuObj.class + " dropdown-item"}
+                  typeOf={Link}
+                  pageLink={link === "Home" ? "/" : link.toLocaleLowerCase().replaceAll(" ", "-")}
                 />
               )
             })}
@@ -33,7 +36,7 @@ const MyNavBar = function () {
         </Dropdown>
         {/* Logo Netflix */}
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
-          <img className="h-100" src="../public/netflix_logo.png" alt="Netflix Logo" />
+          <img className="h-100" src="./netflix_logo.png" alt="Netflix Logo" />
         </Navbar.Brand>
 
         {/* Menu Tablet / Desktop */}
@@ -43,8 +46,9 @@ const MyNavBar = function () {
               <NavBarElement
                 key={link}
                 buttonName={link}
-                classObj={menuObj.class}
-                typeOf={Nav.Link}
+                classObj={menuObj.class + " nav-link"}
+                typeOf={Link}
+                pageLink={link === "Home" ? "/" : link.toLocaleLowerCase().replaceAll(" ", "-")}
               />
             )
           })}
@@ -61,13 +65,35 @@ const MyNavBar = function () {
           <Nav.Link className=" p-2">
             <FontAwesomeIcon icon="fa-solid fa-bell" style={{ color: "rgb(255, 255, 255)" }} />
           </Nav.Link>
-          <Nav.Link style={{ height: "55px" }} className=" p-2">
-            <img className="h-100" src="../public/avatar.png" alt="" />
-          </Nav.Link>
         </Nav>
+        <Dropdown
+          style={{ zIndex: "200" }}
+          align="end"
+          as={NavItem}
+          className="flex-grow-0  d-flex">
+          <Dropdown.Toggle as={NavLink} style={{ height: "55px" }}>
+            <img className="h-100 p-2" src="./avatar.png" alt="avatar-kids" />
+          </Dropdown.Toggle>
+          <Dropdown.Menu
+            style={{ top: "100%" }}
+            className="bg-black rounded-0 border-light border-1">
+            <Link
+              to="/settings"
+              className="text-white text-decoration-none opacity-75 dropdown-item">
+              Settings
+            </Link>
+            <Link
+              to="/login-page"
+              className="text-white text-decoration-none opacity-75 dropdown-item">
+              Log Out
+            </Link>
+          </Dropdown.Menu>
+        </Dropdown>
       </Container>
     </Navbar>
   )
 }
 
 export default MyNavBar
+
+// text-white text-decoration-none opacity-75 dropdown-item

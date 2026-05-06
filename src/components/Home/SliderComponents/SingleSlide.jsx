@@ -1,12 +1,13 @@
 import { Col, Image, Modal, Container, Row } from "react-bootstrap"
 import { useState } from "react"
+import { useNavigate } from "react-router"
 
 const SingleSlide = function (props) {
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
+  // const handleClose = () => setShow(false)
+  // const handleShow = () => setShow(true)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-
+  const navigate = useNavigate()
   return (
     <>
       <Col className="p-0">
@@ -15,11 +16,14 @@ const SingleSlide = function (props) {
           src={"http://image.tmdb.org/t/p/" + "w342/" + props.posterLink}
           alt=""
           id={props.uniqueId}
-          onClick={handleShow}
+          // onClick={handleShow}
+          onClick={() => {
+            navigate("/details/" + props.uniqueId)
+          }}
         />
       </Col>
 
-      <Modal show={show} onHide={handleClose} size="lg" data-bs-theme="dark">
+      {/* <Modal show={show} onHide={handleClose} size="lg" data-bs-theme="dark">
         <div
           className="modal-details pb-4"
           style={{
@@ -50,7 +54,7 @@ const SingleSlide = function (props) {
             </Container>
           </Modal.Body>
         </div>
-      </Modal>
+      </Modal> */}
     </>
   )
 }

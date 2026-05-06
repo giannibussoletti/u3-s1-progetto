@@ -29,9 +29,9 @@ const AccountMember = function () {
         {/* STUDENT */}
         <Row className="mb-3 border-secondary text-center text-sm-start border-bottom">
           <Col className="p-0" sm={6}>
-            <p class="mb-2 fw-bold">student&#64;strive.school</p>
-            <p class="mb-2 text-secondary">Password:*******</p>
-            <p class="mb-2 text-secondary">Phone: 321 044 1279</p>
+            <p className="mb-2 fw-bold">student&#64;strive.school</p>
+            <p className="mb-2 text-secondary">Password:*******</p>
+            <p className="mb-2 text-secondary">Phone: 321 044 1279</p>
           </Col>
           <Col sm={6} className="text-center text-sm-end">
             {studentSecondSection.map((listItem, i) => {

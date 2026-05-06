@@ -63,7 +63,7 @@ const LoginPage = function () {
 
             {/* AUTOPLAY CONTROLS */}
             <div id="checkbox-css" className="py-4">
-              <h5 class="text-white opacity-75">Autoplay Controls</h5>
+              <h5 className="text-white opacity-75">Autoplay Controls</h5>
               <Form>
                 <Form.Check
                   type="checkbox"

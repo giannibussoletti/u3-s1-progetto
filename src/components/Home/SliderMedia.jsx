@@ -31,7 +31,6 @@ const SliderMedia = function (props) {
                 seriesName={linkPoster.name}
                 plotSummary={linkPoster.overview}
                 backdrop={linkPoster.backdrop_path}
-                MediaObject={props.array_path}
                 // SeriesAirDate={linkPoster.first_air_date}
                 // MovieRelease={linkPoster.release_date}
               />

@@ -18,7 +18,7 @@ const SingleSlide = function (props) {
           id={props.uniqueId}
           // onClick={handleShow}
           onClick={() => {
-            navigate("/details/" + props.uniqueId)
+            navigate("/details/" + (props.originalTitle ? "movie/" : "serie/") + props.uniqueId)
           }}
         />
       </Col>

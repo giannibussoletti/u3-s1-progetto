@@ -142,17 +142,7 @@ class App extends Component {
               />
               <Route path="/settings" element={<Settings />} />
               <Route path="/login-page" element={<LoginPage />} />
-              <Route
-                path="/details/:uniqueId"
-                element={
-                  <Details
-                    infoArray={this.state.information.image1.concat(
-                      this.state.information.image2,
-                      this.state.information.image3,
-                    )}
-                  />
-                }
-              />
+              <Route path="/details/:mediaType/:uniqueId" element={<Details />} />
             </Routes>
           </main>
 

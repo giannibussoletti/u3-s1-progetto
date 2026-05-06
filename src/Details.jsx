@@ -7,24 +7,22 @@ const Details = function (props) {
     (singleMedia) => params.uniqueId === singleMedia.id.toString(),
   )
   return (
-    <Container
-      fluid
-      className="pb-4 details-bg text-white"
-      style={{
-        backgroundImage:
-          "url(http://image.tmdb.org/t/p/" + "original/" + singleMedia.backdrop_path + ")",
-      }}>
-      <Container>
+    <>
+      <Container className="position-relative text-white main-container-details">
         <Row>
           <Col>
-            <h1 className="text-center fw-bold fs-1">
+            <h1 style={{ fontSize: "3em" }} className="text-center fw-bold my-4">
               {singleMedia.title === undefined ? singleMedia.name : singleMedia.title}
             </h1>
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Image src={"http://image.tmdb.org/t/p/" + "w500/" + singleMedia.poster_path} />
+          <Col sm={12} md={6} className="text-center">
+            <Image
+              fluid
+              className="shadow-lg mb-4"
+              src={"http://image.tmdb.org/t/p/" + "w342" + singleMedia.poster_path}
+            />
           </Col>
           <Col>
             <p style={{ lineHeight: "2em" }} className="bg-black p-3 rounded-2 bg-opacity-75">
@@ -35,7 +33,14 @@ const Details = function (props) {
           </Col>
         </Row>
       </Container>
-    </Container>
+      <Container fluid className="media-details-bg">
+        <Row>
+          <Col>
+            <Image src={"http://image.tmdb.org/t/p/" + "original/" + singleMedia.backdrop_path} />
+          </Col>
+        </Row>
+      </Container>
+    </>
   )
 }
 export default Details

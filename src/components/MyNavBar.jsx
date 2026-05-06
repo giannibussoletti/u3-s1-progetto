@@ -1,9 +1,11 @@
 import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBarElement from "./Home/NavBarElement"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 const MyNavBar = function () {
+  const navigate = useNavigate()
+
   const menuObj = {
     menu: ["Home", "Tv Show", "Movies", "Recently Added", "My List"],
     class: "text-white text-decoration-none opacity-75",
@@ -36,7 +38,14 @@ const MyNavBar = function () {
         </Dropdown>
         {/* Logo Netflix */}
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
-          <img className="h-100" src="./netflix_logo.png" alt="Netflix Logo" />
+          <img
+            className="h-100"
+            src="./netflix_logo.png"
+            alt="Netflix Logo"
+            onClick={() => {
+              navigate("/")
+            }}
+          />
         </Navbar.Brand>
 
         {/* Menu Tablet / Desktop */}
@@ -66,11 +75,7 @@ const MyNavBar = function () {
             <FontAwesomeIcon icon="fa-solid fa-bell" style={{ color: "rgb(255, 255, 255)" }} />
           </Nav.Link>
         </Nav>
-        <Dropdown
-          style={{ zIndex: "200" }}
-          align="end"
-          as={NavItem}
-          className="flex-grow-0  d-flex">
+        <Dropdown align="end" as={NavItem} className="flex-grow-0  d-flex">
           <Dropdown.Toggle as={NavLink} style={{ height: "55px" }}>
             <img className="h-100 p-2" src="./avatar.png" alt="avatar-kids" />
           </Dropdown.Toggle>

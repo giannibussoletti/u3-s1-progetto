@@ -3,7 +3,6 @@ import SliderMedia from "./Home/SliderMedia"
 const TvShow = function (props) {
   return (
     <>
-      <div className="h-25"></div>
       <SliderMedia
         responseOK={props.spinner3}
         title="TV Show"

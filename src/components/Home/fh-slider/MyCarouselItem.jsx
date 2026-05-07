@@ -9,7 +9,7 @@ const MyCarouselItem = function (props) {
         <Col className="mb-5 text-center text-md-start" xs={12} lg={6}>
           <img
             className="w-75"
-            src={"./public/fh-slider/" + props.logoName + "-logo.png"}
+            src={"./fh-slider/" + props.logoName + "-logo.png"}
             alt="django logo"
           />
         </Col>

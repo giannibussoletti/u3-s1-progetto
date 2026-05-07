@@ -7,6 +7,8 @@ import MyNavBar from "./components/MyNavBar"
 import LoginPage from "./LoginPage"
 import Settings from "./Settings"
 
+import DetailsPlaceholder from "./DetailsPlaceholder"
+
 import { BrowserRouter, Route, Routes } from "react-router"
 import TvShow from "./components/TvShow"
 import Details from "./Details"
@@ -141,6 +143,9 @@ class App extends Component {
                 }
               />
               <Route path="/settings" element={<Settings />} />
+
+              <Route path="/placeholder" element={<DetailsPlaceholder />} />
+
               <Route path="/login-page" element={<LoginPage />} />
               <Route path="/details/:mediaType/:uniqueId" element={<Details />} />
             </Routes>

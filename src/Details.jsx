@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row, Image, Button } from "react-bootstrap"
 import { useParams } from "react-router"
+import DetailsPlaceholder from "./DetailsPlaceholder"
 
 const Details = function () {
-  const [movieDetails, setMovieDetails] = useState()
+  const [movieDetails, setMovieDetails] = useState({})
   const [isData, setIsData] = useState(false)
   const params = useParams()
 
@@ -45,7 +46,7 @@ const Details = function () {
   }, [])
 
   if (!isData) {
-    return <div>sta caricando</div>
+    return <DetailsPlaceholder />
   }
 
   return (
@@ -55,7 +56,7 @@ const Details = function () {
       <Container>
         {console.log("render")}
         <Row className="my-4 bg-black p-4">
-          <Col sm={12} md={6} className="text-center">
+          <Col sm={12} md={6} className="text-center mb-5 mb-md-0">
             <Image fluid src={"http://image.tmdb.org/t/p/" + "w342" + movieDetails.poster_path} />
           </Col>
           <Col>

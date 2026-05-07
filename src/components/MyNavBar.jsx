@@ -40,7 +40,7 @@ const MyNavBar = function () {
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
           <img
             className="h-100"
-            src="./netflix_logo.png"
+            src="/netflix_logo.png"
             alt="Netflix Logo"
             onClick={() => {
               navigate("/")
@@ -77,7 +77,7 @@ const MyNavBar = function () {
         </Nav>
         <Dropdown align="end" as={NavItem} className="flex-grow-0  d-flex">
           <Dropdown.Toggle as={NavLink} style={{ height: "55px" }}>
-            <img className="h-100 p-2" src="./avatar.png" alt="avatar-kids" />
+            <img className="h-100 p-2" src="/avatar.png" alt="avatar-kids" />
           </Dropdown.Toggle>
           <Dropdown.Menu
             style={{ top: "100%" }}

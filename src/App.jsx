@@ -118,7 +118,7 @@ class App extends Component {
           <header className="position-relative">
             <MyNavBar />
           </header>
-          <main className="bg-black">
+          <main className="bg-black flex-grow-1">
             <Routes>
               <Route
                 path={"/"}

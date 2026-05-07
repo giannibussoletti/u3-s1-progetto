@@ -23,7 +23,7 @@ class Footer extends Component {
     return (
       <Container>
         <Row className="text-center text-md-start" xs={1} sm={2} md={4}>
-          <Col className="w-100 my-5">
+          <Col className="w-100 my-4">
             {this.state.footerIcon.map((icon) => (
               <FontAwesomeIcon
                 size="2xl"

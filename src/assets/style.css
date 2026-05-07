@@ -115,3 +115,19 @@ h4,
 .dropdown-item:active {
   background-color: grey !important;
 }
+
+/* Detail page */
+.average-vote {
+  width: 70px;
+  height: 70px;
+  background: black;
+  outline: 3px solid #b20710;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.average-vote h5 {
+  margin: 0 !important;
+}

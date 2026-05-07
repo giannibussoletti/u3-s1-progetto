@@ -57,7 +57,7 @@ const MyNavBar = function () {
                 buttonName={link}
                 classObj={menuObj.class + " nav-link"}
                 typeOf={Link}
-                pageLink={link === "Home" ? "/" : link.toLocaleLowerCase().replaceAll(" ", "-")}
+                pageLink={link === "Home" ? "" : link.toLocaleLowerCase().replaceAll(" ", "-")}
               />
             )
           })}

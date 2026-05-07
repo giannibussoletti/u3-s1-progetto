@@ -35,7 +35,6 @@ const Details = function () {
       .then((data) => {
         setMovieDetails(data)
         setIsData(true)
-        console.log(data)
       })
       .catch((err) => err)
   }
@@ -57,11 +56,7 @@ const Details = function () {
         {console.log("render")}
         <Row className="my-4 bg-black p-4">
           <Col sm={12} md={6} className="text-center">
-            <Image
-              fluid
-              className="shadow-lg mb-5"
-              src={"http://image.tmdb.org/t/p/" + "w342" + movieDetails.poster_path}
-            />
+            <Image fluid src={"http://image.tmdb.org/t/p/" + "w342" + movieDetails.poster_path} />
           </Col>
           <Col>
             <h2 className="text-uppercase fw-bold">
@@ -83,14 +78,14 @@ const Details = function () {
                 </Button>
               </Col>
               <Col className="d-flex justify-content-center">
-                <span className="average-vote">
+                <span className="average-vote my-3 my-md-0">
                   <h5 className="fw-bold pb-1">
                     {movieDetails.vote_average.toString().slice(0, 3)}
                   </h5>
                 </span>
               </Col>
             </Row>
-            <Row>
+            <Row xs={1} sm={3}>
               <Col>
                 <h6 className="text-center">
                   {movieDetails.first_air_date
@@ -99,10 +94,12 @@ const Details = function () {
                 </h6>
               </Col>
               <Col>
-                {movieDetails.last_episode_to_air
-                  ? movieDetails.last_episode_to_air.runtime
-                  : movieDetails.runtime}{" "}
-                min.
+                <h6 className="text-center my-5 my-sm-0">
+                  {movieDetails.last_episode_to_air
+                    ? movieDetails.last_episode_to_air.runtime
+                    : movieDetails.runtime}{" "}
+                  min.
+                </h6>
               </Col>
 
               <Col>

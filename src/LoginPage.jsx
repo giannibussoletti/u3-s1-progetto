@@ -1,6 +1,7 @@
 import { Container, Row, Col, Image, Button, Dropdown, Form } from "react-bootstrap"
 import MenuLang from "./components/LoginPageComponents/MenuLang"
 import BottomButton from "./components/LoginPageComponents/BottomButton"
+import { Link } from "react-router"
 
 const langArray = ["Italian", "English", "German", "Spanish"]
 const bottomButton = ["SAVE", "CANCEL", "DELETE PROFILE"]
@@ -23,9 +24,9 @@ const LoginPage = function () {
             <div className="border-bottom border-secondary py-4">
               <Button className="bg-opacity-75 w-100 text-start mb-4 rounded-0" variant="secondary">
                 <h5 className="text-light m-0 p-2">
-                  <a className="link-light" href="#">
+                  <Link className="link-light" to={"/"}>
                     Strive Student
-                  </a>
+                  </Link>
                 </h5>
               </Button>
 

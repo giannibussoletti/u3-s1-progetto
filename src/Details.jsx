@@ -34,7 +34,8 @@ const Details = function () {
       })
       .then((data) => {
         setMovieDetails(data)
-        console.log("data")
+        setIsData(true)
+        console.log(data)
       })
       .catch((err) => err)
   }
@@ -43,6 +44,10 @@ const Details = function () {
     console.log("Effect")
     MultiFetching()
   }, [])
+
+  if (!isData) {
+    return <div>sta caricando</div>
+  }
 
   return (
     <Container
@@ -88,10 +93,17 @@ const Details = function () {
             <Row>
               <Col>
                 <h6 className="text-center">
-                  {movieDetails.first_air_date.toString().slice(0, 4)}
+                  {movieDetails.first_air_date
+                    ? movieDetails.first_air_date.toString().slice(0, 4)
+                    : movieDetails.release_date.toString().slice(0, 4)}
                 </h6>
               </Col>
-              <Col>{movieDetails.last_episode_to_air.runtime} min.</Col>
+              <Col>
+                {movieDetails.last_episode_to_air
+                  ? movieDetails.last_episode_to_air.runtime
+                  : movieDetails.runtime}{" "}
+                min.
+              </Col>
 
               <Col>
                 {movieDetails.genres.map((genre) => {

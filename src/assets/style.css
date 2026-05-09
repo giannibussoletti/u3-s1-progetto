@@ -4,14 +4,23 @@
   display: none !important;
 } */
 
-.slide-1,
-.slide-2,
 .modal-details,
-.slide-3 {
+.backdrop-fh-carousel {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
+/* .modal-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.7;
+} */
 
 .main-container-details {
   z-index: 1;
@@ -30,29 +39,6 @@
   opacity: 0.2;
   z-index: -1;
   min-width: 1300px;
-}
-
-.modal-details::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.7;
-}
-
-.slide-1 {
-  background-image: url(/fh-slider/django-unchained.jpg);
-}
-
-.slide-2 {
-  background-image: url(/fh-slider/knives-out-sfondo.jpg);
-}
-
-.slide-3 {
-  background-image: url(/fh-slider/frankenstein.jpg);
 }
 
 .hiding-bar {

@@ -4,7 +4,7 @@ import FullHeigthCar from "./components/Home/FullHeigthCar"
 const Home = function (props) {
   return (
     <div className="bg-black">
-      <FullHeigthCar />
+      <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />
 
       <SliderMedia
         responseOK={props.spinner1}

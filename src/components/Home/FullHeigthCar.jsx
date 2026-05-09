@@ -4,7 +4,6 @@ import MyCarouselItem from "./fh-slider/MyCarouselItem"
 
 class FullHeigthCar extends Component {
   buttonClass = "fw-bold px-5 py-2 text-capitalize shadow-sm me-2 mb-2 rounded-2 border-00"
-  logoName = ["django", "knives-out", "frankenstein"]
   render() {
     return (
       <div className="vh-100">
@@ -13,13 +12,10 @@ class FullHeigthCar extends Component {
           className="vw-100 vh-100 position-absolute top-0"
           controls={false}
           indicators={false}>
-          {this.logoName.map((logo, i) => {
+          {this.props.fhCarouselArray.slice(0, 5).map((media, i) => {
             return (
-              <Carousel.Item
-                key={logo}
-                className={"vw-100 vh-100 slide-" + (i + 1)}
-                interval={4000}>
-                <MyCarouselItem logoName={logo} />
+              <Carousel.Item key={i} className="vw-100 vh-100" interval={4000}>
+                <MyCarouselItem infoMedia={media} />
               </Carousel.Item>
             )
           })}

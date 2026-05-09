@@ -21,6 +21,7 @@ class App extends Component {
       image1: [],
       image2: [],
       image3: [],
+      carouselMovies: [],
       spinner1: true,
       spinner2: true,
       spinner3: true,
@@ -36,6 +37,7 @@ class App extends Component {
     },
   }
 
+  upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1"
   popularMovie = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
   popularTV = "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1"
   searchMethod = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1"
@@ -105,10 +107,31 @@ class App extends Component {
       .catch((err) => console.log(err))
   }
 
+  fechingUpcomingMovies = () => {
+    fetch(this.upcomingMovies, this.options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error(response.status)
+        }
+      })
+      .then((data) => {
+        this.setState({
+          information: {
+            ...this.state.information,
+            carouselMovies: data.results,
+          },
+        })
+      })
+      .catch((err) => console.log(err))
+  }
+
   componentDidMount() {
     this.fetchingPopularMovie()
     this.fetchingPopularTV()
     this.fetchingSearch()
+    this.fechingUpcomingMovies()
   }
 
   render() {
@@ -130,6 +153,7 @@ class App extends Component {
                     posterArray1={this.state.information.image1}
                     posterArray2={this.state.information.image2}
                     posterArray3={this.state.information.image3}
+                    fhCarouselArray={this.state.information.carouselMovies}
                   />
                 }
               />

@@ -14,7 +14,7 @@ class FullHeigthCar extends Component {
           indicators={false}>
           {this.props.fhCarouselArray.slice(0, 5).map((media, i) => {
             return (
-              <Carousel.Item key={i} className="vw-100 vh-100" interval={4000}>
+              <Carousel.Item key={i} className="vw-100 vh-100" interval={5000}>
                 <MyCarouselItem infoMedia={media} />
               </Carousel.Item>
             )

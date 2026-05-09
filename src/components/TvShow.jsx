@@ -4,7 +4,7 @@ import SliderMedia from "./Home/SliderMedia"
 const TvShow = function (props) {
   return (
     <>
-      <FullHeigthCar />
+      <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />
       <SliderMedia
         responseOK={props.spinner3}
         title="TV Show"

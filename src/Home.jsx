@@ -7,20 +7,20 @@ const Home = function (props) {
       <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />
 
       <SliderMedia
-        responseOK={props.spinner1}
+        responseOK={props.firstSpinner}
         title="Popular Movie"
-        array_path={props.posterArray1.slice(0, 15)}
+        array_path={props.listPopularMovie}
       />
 
       <SliderMedia
-        responseOK={props.spinner2}
+        responseOK={props.secondSpinner}
         title="Top Rated"
-        array_path={props.posterArray2.slice(0, 15)}
+        array_path={props.tvTopRated}
       />
       <SliderMedia
-        responseOK={props.spinner3}
+        responseOK={props.thirdSpinner}
         title="TV Show"
-        array_path={props.posterArray3.slice(0, 15)}
+        array_path={props.listPopularTV}
       />
     </div>
   )

@@ -6,14 +6,14 @@ const TvShow = function (props) {
     <>
       <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />
       <SliderMedia
-        responseOK={props.spinner3}
+        responseOK={props.thirdSpinner}
         title="Fresh TV Show"
-        array_path={props.posterArray3.slice(0, 10)}
+        array_path={props.listPopularTV.slice(0, 10)}
       />
       <SliderMedia
-        responseOK={props.spinner3}
+        responseOK={props.thirdSpinner}
         title="Another Binge Watching couldn't hurt"
-        array_path={props.posterArray3.slice(11)}
+        array_path={props.listPopularTV.slice(11)}
       />
     </>
   )

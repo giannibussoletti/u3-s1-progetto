@@ -6,14 +6,14 @@ const Movies = function (props) {
     <>
       <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />
       <SliderMedia
-        responseOK={props.spinner1}
+        responseOK={props.firstSpinner}
         title="Fresh Movies"
-        array_path={props.posterArray1.slice(0, 10)}
+        array_path={props.listPopularMovie.slice(0, 10)}
       />
       <SliderMedia
-        responseOK={props.spinner1}
+        responseOK={props.firstSpinner}
         title="Top Rated"
-        array_path={props.posterArray1.slice(11)}
+        array_path={props.listPopularMovie.slice(11)}
       />
     </>
   )

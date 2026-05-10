@@ -12,6 +12,7 @@ import DetailsPlaceholder from "./DetailsPlaceholder"
 import { BrowserRouter, Route, Routes } from "react-router"
 import TvShow from "./components/TvShow"
 import Details from "./Details"
+import Movies from "./components/Movies"
 
 // Fetch
 
@@ -181,6 +182,16 @@ class App extends Component {
                 }
               />
               <Route
+                path="/movies"
+                element={
+                  <Movies
+                    spinner1={this.state.information.spinner1}
+                    posterArray1={this.state.information.image1}
+                    fhCarouselArray={this.state.information.carouselMovies}
+                  />
+                }
+              />
+              <Route
                 path="/tv-show"
                 element={
                   <TvShow
@@ -190,12 +201,10 @@ class App extends Component {
                   />
                 }
               />
-              <Route path="/settings" element={<Settings />} />
+              <Route path="settings" element={<Settings />} />
 
-              <Route path="/placeholder" element={<DetailsPlaceholder />} />
-
-              <Route path="/login-page" element={<LoginPage />} />
-              <Route path="/details/:mediaType/:uniqueId" element={<Details />} />
+              <Route path="login-page" element={<LoginPage />} />
+              <Route path="details/:mediaType/:uniqueId" element={<Details />} />
             </Routes>
           </main>
 

@@ -4,6 +4,12 @@
   display: none !important;
 } */
 
+/* NavBar */
+.dropdown-item.active {
+  background-color: #b20710 !important;
+}
+/* NavBar */
+
 .modal-details,
 .backdrop-fh-carousel {
   background-repeat: no-repeat;

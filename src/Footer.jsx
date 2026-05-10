@@ -14,7 +14,7 @@ class Footer extends Component {
   state = {
     footerIcon: ["facebook", "instagram", "twitter", "youtube"],
     firstColFooter: ["Audio and Subtitles", "Media Center", "Privacy", "Contact Us"],
-    secondColFooter: ["Audio Dcscription", "Investor Relations", "Legal Notices"],
+    secondColFooter: ["Audio Description", "Investor Relations", "Legal Notices"],
     thirdColFooter: ["Help Center", "Jobs", "Cookie Preferences"],
     fourthColFooter: ["Gift Cards", "Terms of Use", "Corporate Information"],
   }

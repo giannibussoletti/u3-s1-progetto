@@ -7,8 +7,7 @@ const MyNavBar = function () {
   const navigate = useNavigate()
 
   const menuObj = {
-    menu: ["Home", "Tv Show", "Movies", "Recently Added", "My List"],
-    class: "text-white text-decoration-none opacity-75",
+    menu: ["Home", "Tv Show", "Movies"], // , "Recently Added", "My List" <-- Pagine non esistenti
     menuSettings: ["Settings", "Logout"],
   }
 
@@ -28,9 +27,9 @@ const MyNavBar = function () {
                 <NavBarElement
                   key={link}
                   buttonName={link}
-                  classObj={menuObj.class + " dropdown-item"}
+                  classObj={"dropdown-item"}
                   typeOf={Link}
-                  pageLink={link === "Home" ? "/" : link.toLocaleLowerCase().replaceAll(" ", "-")}
+                  pageLink={link === "Home" ? "" : link.toLocaleLowerCase().replaceAll(" ", "-")}
                 />
               )
             })}
@@ -55,7 +54,7 @@ const MyNavBar = function () {
               <NavBarElement
                 key={link}
                 buttonName={link}
-                classObj={menuObj.class + " nav-link"}
+                classObj={"nav-link"}
                 typeOf={Link}
                 pageLink={link === "Home" ? "" : link.toLocaleLowerCase().replaceAll(" ", "-")}
               />

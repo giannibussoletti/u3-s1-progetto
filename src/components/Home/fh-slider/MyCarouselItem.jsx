@@ -6,7 +6,6 @@ const MyCarouselItem = function (props) {
   const [logo, setLogo] = useState("")
   const Auth =
     "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2ZlOGNmMGRmZmQ1NGI0ZmFmMTRlYzkzZjliOTViZCIsIm5iZiI6MTc3MTI4MjEzNC41NzIsInN1YiI6IjY5OTM5ZWQ2OTcxN2QwZGM5ZDA2NWE0MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bbMQkik7cmt6uK6yP5WsuRlItQgQkkkeoH7ycPiJKAg"
-
   const options = {
     headers: {
       Authorization: Auth,
@@ -66,6 +65,7 @@ const MyCarouselItem = function (props) {
             text="Play"
           />
           <MyButtonSlider
+            movieObj={props.infoMedia}
             btnClass={buttonClass}
             variant="secondary"
             icon="fa-solid fa-circle-info"

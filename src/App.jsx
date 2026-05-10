@@ -139,7 +139,7 @@ const App = () => {
     <BrowserRouter>
       <div className="d-flex flex-column vh-100">
         <header className="position-relative">
-          <MyNavBar />
+          <MyNavBar options={options} />
         </header>
         <main className="bg-black flex-grow-1">
           <Routes>

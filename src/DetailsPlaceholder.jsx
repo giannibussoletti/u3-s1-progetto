@@ -13,11 +13,11 @@ const DetailsPlaceholder = () => {
           <Col>
             <Placeholder as="h2" bg="light" xs={6} size="lg" animation="glow" />
 
-            <p>
+            <div>
               <Placeholder as="p" bg="light" xs={6} size="lg" animation="glow" />
               <Placeholder as="p" bg="light" xs={5} size="lg" animation="glow" />
               <Placeholder as="p" bg="light" xs={12} size="lg" animation="glow" />
-            </p>
+            </div>
 
             <Row className="my-4 align-items-center">
               <Col xs={12} md={8} className="mb-3 text-center">

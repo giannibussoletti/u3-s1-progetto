@@ -1,7 +1,8 @@
-import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
+import { Container, Nav, Navbar, Dropdown, NavItem, NavLink, Form, Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBarElement from "./Home/NavBarElement"
 import { Link, useNavigate } from "react-router"
+import { useState } from "react"
 
 const MyNavBar = function () {
   const navigate = useNavigate()
@@ -10,6 +11,8 @@ const MyNavBar = function () {
     menu: ["Home", "Tv Show", "Movies"], // , "Recently Added", "My List" <-- Pagine non esistenti
     menuSettings: ["Settings", "Logout"],
   }
+
+  const [search, setSeach] = useState("")
 
   return (
     <Navbar expand="lg" className="p-0 z-3" data-bs-theme="dark">
@@ -35,6 +38,7 @@ const MyNavBar = function () {
             })}
           </Dropdown.Menu>
         </Dropdown>
+
         {/* Logo Netflix */}
         <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
           <img
@@ -61,19 +65,37 @@ const MyNavBar = function () {
             )
           })}
         </Nav>
+
         {/* Menu Destra */}
         <Nav className=" flex-row align-items-center">
-          <Nav.Link className=" p-2">
-            <FontAwesomeIcon
-              icon="fa-solid fa-magnifying-glass"
-              style={{ color: "rgb(255, 255, 255)" }}
-            />
-          </Nav.Link>
+          <Form inline className="pe-3">
+            <Row className=" align-items-center border-2 border rounded-3">
+              <Col xs="auto" className="px-0">
+                <Form.Control
+                  type="text"
+                  placeholder="Search"
+                  value={search}
+                  className="mr-sm-2 border-0 rounded-start-3 rounded-end-0"
+                  onChange={(e) => {
+                    setSeach(e.target.value)
+                  }}
+                />
+              </Col>
+              <Col>
+                <FontAwesomeIcon
+                  icon="fa-solid fa-magnifying-glass"
+                  style={{ color: "rgb(255, 255, 255)" }}
+                />
+              </Col>
+            </Row>
+          </Form>
           <Nav.Link className={menuObj.class + " p-2 d-none d-sm-inline-block"}>KIDS</Nav.Link>
           <Nav.Link className=" p-2">
             <FontAwesomeIcon icon="fa-solid fa-bell" style={{ color: "rgb(255, 255, 255)" }} />
           </Nav.Link>
         </Nav>
+
+        {/* Menu Utente Dropdown */}
         <Dropdown align="end" as={NavItem} className="flex-grow-0  d-flex">
           <Dropdown.Toggle as={NavLink} style={{ height: "55px" }}>
             <img className="h-100 p-2" src="/avatar.png" alt="avatar-kids" />

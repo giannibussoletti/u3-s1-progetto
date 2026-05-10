@@ -1,19 +1,8 @@
-import {
-  Container,
-  Nav,
-  Navbar,
-  Dropdown,
-  NavItem,
-  NavLink,
-  Form,
-  Row,
-  Col,
-  Button,
-} from "react-bootstrap"
+import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBarElement from "./Home/NavBarElement"
 import { Link, useNavigate } from "react-router"
-import { useState } from "react"
+import SearchBar from "./Home/NavBar/SearchBar"
 
 const MyNavBar = function (props) {
   const navigate = useNavigate()
@@ -23,32 +12,11 @@ const MyNavBar = function (props) {
     menuSettings: ["Settings", "Logout"],
   }
 
-  const [search, setSeach] = useState("")
-
-  const multiLink = `https://api.themoviedb.org/3/search/multi?query=${search}&include_adult=false&language=en-US&page=1`
-
-  const searchMulti = () => {
-    fetch(multiLink, props.options)
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          console.log(response)
-
-          throw new Error(response.status)
-        }
-      })
-      .then((data) => {
-        console.log(data.results)
-      })
-      .catch((err) => err)
-  }
-
   return (
     <Navbar expand="lg" className="p-0 z-3" data-bs-theme="dark">
       <Container fluid className="bg-black text-white position-relative">
         {/* Menu Hamburger solo da mobile */}
-        <Dropdown as={NavItem} className="flex-grow-0  d-flex d-lg-none">
+        <Dropdown as={NavItem} className="flex-grow-0 d-flex d-lg-none burger-menu">
           <Dropdown.Toggle as={NavLink}>
             <FontAwesomeIcon icon="fa-solid fa-bars" style={{ color: "#e2e5e9" }} />
           </Dropdown.Toggle>
@@ -70,7 +38,9 @@ const MyNavBar = function (props) {
         </Dropdown>
 
         {/* Logo Netflix */}
-        <Navbar.Brand style={{ height: "55px" }} className="me-auto me-lg-0">
+        <Navbar.Brand
+          style={{ height: "55px" }}
+          className="me-auto me-lg-0 d-none d-sm-inline-block">
           <img
             className="h-100"
             src="/netflix_logo.png"
@@ -82,7 +52,7 @@ const MyNavBar = function (props) {
         </Navbar.Brand>
 
         {/* Menu Tablet / Desktop */}
-        <Nav className="d-none d-lg-flex me-auto">
+        <Nav className="d-none d-lg-flex">
           {menuObj.menu.map((link) => {
             return (
               <NavBarElement
@@ -95,39 +65,11 @@ const MyNavBar = function (props) {
             )
           })}
         </Nav>
-
+        <SearchBar options={props.options} />
         {/* Menu Destra */}
         <Nav className=" flex-row align-items-center">
-          <Form inline className="pe-3">
-            <Row className=" align-items-center border-2 border rounded-3">
-              <Col xs="auto" className="px-0">
-                <Form.Control
-                  type="text"
-                  placeholder="Cosa ti va di guardare?"
-                  value={search}
-                  className="mr-sm-2 border-0 rounded-start-3 rounded-end-0"
-                  onChange={(e) => {
-                    setSeach(e.target.value)
-                  }}
-                />
-              </Col>
-              <Col className="p-0">
-                <Button
-                  className="rounded-start-0 bg-black border-0"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    searchMulti()
-                  }}>
-                  <FontAwesomeIcon
-                    icon="fa-solid fa-magnifying-glass"
-                    style={{ color: "rgb(255, 255, 255)" }}
-                  />
-                </Button>
-              </Col>
-            </Row>
-          </Form>
           <Nav.Link className={menuObj.class + " p-2 d-none d-sm-inline-block"}>KIDS</Nav.Link>
-          <Nav.Link className=" p-2">
+          <Nav.Link className=" p-2 d-none d-sm-inline-block">
             <FontAwesomeIcon icon="fa-solid fa-bell" style={{ color: "rgb(255, 255, 255)" }} />
           </Nav.Link>
         </Nav>

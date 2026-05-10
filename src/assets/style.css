@@ -1,8 +1,8 @@
 /* MainPage CSS */
 
-/* .dropdown-toggle::after {
+.burger-menu .dropdown-toggle::after {
   display: none !important;
-} */
+}
 
 /* NavBar */
 .dropdown-item.active {

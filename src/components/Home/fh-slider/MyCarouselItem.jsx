@@ -50,7 +50,7 @@ const MyCarouselItem = function (props) {
           "url(http://image.tmdb.org/t/p/" + "original" + props.infoMedia.backdrop_path + ")",
       }}>
       <Row className="position-absolute mt-5" style={{ bottom: "25%" }}>
-        <Col className="mb-5 text-center ms-md-5 ps-md-5" xs={12} md={6}>
+        <Col className="mb-5 text-center text-md-start ms-md-5 ps-md-5" xs={12} md={6}>
           <Image
             className="w-75"
             src={"http://image.tmdb.org/t/p/" + "w342" + logo.file_path}

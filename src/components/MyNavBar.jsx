@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, Dropdown, NavItem, NavLink, Row, Col } from "react-bootstrap"
+import { Container, Nav, Navbar, Dropdown, NavItem, NavLink } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import NavBarElement from "./Home/NavBarElement"
 import { Link, useNavigate } from "react-router"

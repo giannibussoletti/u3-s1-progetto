@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row, Image, Button } from "react-bootstrap"
-import { useParams } from "react-router"
+import { useLocation, useParams } from "react-router"
 import DetailsPlaceholder from "./DetailsPlaceholder"
 
 const Details = function () {
@@ -8,7 +8,7 @@ const Details = function () {
   const [mediaLogo, setMediaLogo] = useState({})
   const [isData, setIsData] = useState(false)
   const params = useParams()
-
+  const location = useLocation()
   const Auth =
     "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2ZlOGNmMGRmZmQ1NGI0ZmFmMTRlYzkzZjliOTViZCIsIm5iZiI6MTc3MTI4MjEzNC41NzIsInN1YiI6IjY5OTM5ZWQ2OTcxN2QwZGM5ZDA2NWE0MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bbMQkik7cmt6uK6yP5WsuRlItQgQkkkeoH7ycPiJKAg"
 
@@ -63,6 +63,12 @@ const Details = function () {
     MultiFetching()
     LogosFetching()
   }, [])
+
+  useEffect(() => {
+    MultiFetching()
+    LogosFetching()
+  }, [location.pathname])
+
   if (!isData) {
     return <DetailsPlaceholder />
   }

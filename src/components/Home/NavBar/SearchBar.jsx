@@ -64,9 +64,12 @@ const SearchBar = (props) => {
         </Col>
       </Row>
       {searchResults ? (
-        <Row className="position-absolute bg-black flex-grow-1 p-3" id="searchMenu">
+        <Row
+          className="position-absolute bg-black flex-grow-1 p-3"
+          onMouseLeave={() => {
+            setTimeout(() => setResults(null), 1000)
+          }}>
           {searchResults.slice(0, 5).map((result) => {
-            console.log(result.release_date)
             return (
               <NavBarSearch
                 key={result.id}
@@ -80,6 +83,7 @@ const SearchBar = (props) => {
                 titleMovie={result.title}
                 titleSeries={result.name}
                 id={result.id}
+                setResults={setResults}
               />
             )
           })}

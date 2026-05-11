@@ -2,6 +2,7 @@ import FullHeigthCar from "./Home/FullHeigthCar"
 import SliderMedia from "./Home/SliderMedia"
 
 const Movies = function (props) {
+  console.log(props.fhCarouselArray)
   return (
     <>
       <FullHeigthCar fhCarouselArray={props.fhCarouselArray} />

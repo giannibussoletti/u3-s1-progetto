@@ -10,11 +10,7 @@ const MyButtonSlider = function (props) {
       className={props.btnClass}
       onClick={() => {
         props.movieObj
-          ? navigate(
-              "/details/" +
-                (props.movieObj.original_title ? "movie/" : "serie/") +
-                props.movieObj.id,
-            )
+          ? navigate("/details/" + (props.movieObj.title ? "movie/" : "serie/") + props.movieObj.id)
           : ""
       }}>
       <FontAwesomeIcon icon={props.icon} /> {props.text}

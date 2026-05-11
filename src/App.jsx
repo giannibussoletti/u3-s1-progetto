@@ -138,10 +138,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="d-flex flex-column vh-100">
-        <header className="position-relative">
+        <header className="position-relative z-2">
           <MyNavBar options={options} />
         </header>
-        <main className="bg-black flex-grow-1">
+        <main className="bg-black flex-grow-1 z-1">
           <Routes>
             <Route
               path={"/"}
@@ -153,7 +153,7 @@ const App = () => {
                   listPopularMovie={listPopularMovie}
                   tvTopRated={tvTopRated}
                   listPopularTV={listPopularTV}
-                  fhCarouselArray={carouselMovies}
+                  fhCarouselArray={carouselMovies.slice(0, 10)}
                 />
               }
             />
@@ -163,7 +163,7 @@ const App = () => {
                 <Movies
                   firstSpinner={firstSpinner}
                   listPopularMovie={listPopularMovie}
-                  fhCarouselArray={carouselMovies}
+                  fhCarouselArray={carouselMovies.slice(11)}
                 />
               }
             />

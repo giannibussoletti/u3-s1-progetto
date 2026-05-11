@@ -28,7 +28,7 @@ const SearchBar = (props) => {
 
   return (
     <Form
-      className="position-relative ms-auto me-auto"
+      className="position-relative flex-grow-1"
       onKeyDown={(e) => {
         if (e.code === "Enter") {
           e.preventDefault()
@@ -36,19 +36,17 @@ const SearchBar = (props) => {
           setSearch("")
         }
       }}>
-      <Row className=" align-items-center border-0 border rounded-3">
-        <Col xs="auto" className="px-0">
+      <Row className=" align-items-center border-0 border rounded-3 order-md-0 mx-0">
+        <Col xs="auto" className="px-1 d-flex w-100">
           <Form.Control
             type="text"
             placeholder="Cosa ti va di guardare?"
             value={search}
-            className="mr-sm-2 border-0 rounded-start-3 rounded-end-0"
+            className="mr-sm-2 border-0 rounded-start-3 rounded-end-0 flex-grow-1"
             onChange={(e) => {
               setSearch(e.target.value)
             }}
           />
-        </Col>
-        <Col className="p-0">
           <Button
             className="rounded-start-0 bg-dark border-0 border-start border-2"
             onClick={(e) => {
@@ -65,11 +63,11 @@ const SearchBar = (props) => {
       </Row>
       {searchResults ? (
         <Row
-          className="position-absolute bg-black flex-grow-1 p-3"
+          className="position-absolute bg-black p-3 justify-content-center"
           onMouseLeave={() => {
             setTimeout(() => setResults(null), 1000)
           }}>
-          {searchResults.slice(0, 5).map((result) => {
+          {searchResults.slice(0, 6).map((result) => {
             return (
               <NavBarSearch
                 key={result.id}

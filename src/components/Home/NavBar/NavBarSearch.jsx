@@ -4,18 +4,20 @@ import { useNavigate } from "react-router"
 const NavBarSearch = function (props) {
   const navigate = useNavigate()
   return (
-    <>
+    <Col className="d-flex flex-column flex-xxl-row align-items-center" sm={12} md={6} lg={4}>
       <Col
-        xs={4}
         style={{ cursor: "pointer" }}
         className="p-0 my-2"
         onClick={() => {
           navigate("/details/" + (props.mediaType === "movie" ? "movie/" : "serie/") + props.id)
           props.setResults(null)
         }}>
-        <Image className="w-100" src={"https://image.tmdb.org/t/p/w500" + props.poster} />
+        <Image
+          style={{ maxHeight: "220px" }}
+          src={"https://image.tmdb.org/t/p/w500" + props.poster}
+        />
       </Col>
-      <Col xs={8} className="p-0 ps-2 my-2">
+      <Col className="p-0 ps-2 my-2 flex-grow-1">
         {" "}
         <h2
           style={{ fontSize: "1.1rem", cursor: "pointer" }}
@@ -27,13 +29,10 @@ const NavBarSearch = function (props) {
           {props.titleMovie ? props.titleMovie : props.titleSeries}
         </h2>
         <h3 style={{ fontSize: "1rem" }} className="m-0">
-          {props.year}
+          {props.mediaType} - {props.year}
         </h3>
-        <h4 style={{ fontSize: "1rem" }} className="m-0">
-          {props.mediaType}
-        </h4>
       </Col>
-    </>
+    </Col>
   )
 }
 export default NavBarSearch

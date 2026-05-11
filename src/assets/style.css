@@ -4,6 +4,16 @@
   display: none !important;
 }
 
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+@media screen and (min-width: 576px) {
+  .dropdown-toggle::after {
+    display: inline-block !important;
+  }
+}
+
 /* NavBar */
 .dropdown-item.active {
   background-color: #b20710 !important;
@@ -82,7 +92,7 @@
 
 h4,
 .h4 {
-  z-index: 100;
+  z-index: 11;
   position: relative;
 }
 

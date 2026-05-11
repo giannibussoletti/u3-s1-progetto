@@ -2,9 +2,7 @@ import { Carousel } from "react-bootstrap"
 import MyCarouselItem from "./fh-slider/MyCarouselItem"
 
 const FullHeigthCar = function (props) {
-  const filteredEng = props.fhCarouselArray
-    .filter((eng) => eng.original_language === "en")
-    .slice(10)
+  const filteredEng = props.fhCarouselArray.filter((eng) => eng.original_language === "en")
   return (
     <div className="vh-100">
       <Carousel

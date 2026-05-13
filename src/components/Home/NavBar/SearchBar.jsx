@@ -63,10 +63,15 @@ const SearchBar = (props) => {
       </Row>
       {searchResults ? (
         <Row
-          className="position-absolute bg-black p-3 justify-content-center"
           onMouseLeave={() => {
             setTimeout(() => setResults(null), 1000)
-          }}>
+          }}
+          className="position-absolute bg-black p-3 justify-content-center w-100 m-0"
+          xs={1}
+          sm={2}
+          lg={3}
+          xl={4}
+          xxl={6}>
           {searchResults.slice(0, 6).map((result) => {
             return (
               <NavBarSearch
@@ -74,9 +79,11 @@ const SearchBar = (props) => {
                 poster={result.poster_path}
                 mediaType={result.media_type}
                 year={
-                  result.release_date
-                    ? result.release_date.slice(0, 4)
-                    : result.first_air_date.slice(0, 4)
+                  result.release_date || result.first_air_date
+                    ? result.release_date
+                      ? result.release_date.slice(0, 4)
+                      : result.first_air_date.slice(0, 4)
+                    : ""
                 }
                 titleMovie={result.title}
                 titleSeries={result.name}

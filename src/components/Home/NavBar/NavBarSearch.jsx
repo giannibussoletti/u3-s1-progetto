@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 const NavBarSearch = function (props) {
   const navigate = useNavigate()
   return (
-    <Col className="d-flex flex-column flex-xxl-row align-items-center" sm={12} md={6} lg={4}>
+    <Col className="d-flex flex-column align-items-center">
       <Col
         style={{ cursor: "pointer" }}
         className="p-0 my-2"

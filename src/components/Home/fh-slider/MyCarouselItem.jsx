@@ -36,10 +36,6 @@ const MyCarouselItem = function (props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  if (!logo) {
-    return ""
-  }
-  console.log
   const buttonClass = "fw-bold px-5 py-2 text-capitalize shadow-sm me-2 mb-2 rounded-2 border-00"
 
   return (
@@ -52,11 +48,17 @@ const MyCarouselItem = function (props) {
       }}>
       <Row className="position-absolute mt-5" style={{ bottom: "25%" }}>
         <Col className="mb-5 text-center text-md-start ms-md-5 ps-md-5" xs={12} md={6}>
-          <Image
-            className="w-75"
-            src={"http://image.tmdb.org/t/p/" + "w342" + logo.file_path}
-            alt={props.infoMedia.title + " logo"}
-          />
+          {logo ? (
+            <Image
+              className="w-75"
+              src={"http://image.tmdb.org/t/p/" + "w342" + logo.file_path}
+              alt={props.infoMedia.title + " logo"}
+            />
+          ) : (
+            <h1 className="fw-bold bg-white text-black text-center text-uppercase rounded-1 py-2">
+              {props.infoMedia.title}
+            </h1>
+          )}
         </Col>
         <Col xs={12} className="text-center text-md-start ms-md-5 ps-md-5">
           <MyButtonSlider

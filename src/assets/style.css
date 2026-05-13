@@ -27,6 +27,16 @@
   background-position: center;
 }
 
+.menu-search::before {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 /* .modal-details::before {
   content: "";
   position: absolute;
